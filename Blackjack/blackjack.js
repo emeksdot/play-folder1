@@ -13,18 +13,8 @@
 let card1 = "Ace of Spades",
     card2 = "Ten of Hearts";
 
-console.log("Welcome to Blackjack!!!");
-console.log("You are dealt: ");
-console.log(" " + card1);
-console.log(" " + card2);
-console.log();
-console.log();
 
-// Creation of a deck of cards of many
-
-
-
-
+// Creation of a deck of cards of many values
 
 
 function createDeck(){
@@ -36,7 +26,11 @@ function createDeck(){
             
     for (let i = 0; i < suits.length; i++){
         for (let k = 0; k < values.length; k++){
-            deck.push(values[k] + " of " + suits[i]);
+            let card ={
+                suit: suits[i], 
+                value: values[k]
+            }
+            deck.push(card);
         }
     }
     return deck;
@@ -47,9 +41,21 @@ let deck = createDeck();
 function getNextCard(){
     return deck.shift();
 }
+
+function getCardString(card){
+    return card.value + ' of ' + card.suit;
+}
             
 
 console.log(deck); 
  
 let playerCards = [getNextCard(), getNextCard()]; 
+
+console.log("Welcome to Blackjack!!!");
+console.log("You are dealt: ");
+console.log(" " + getCardString(playerCards[0]));
+console.log(" " + getCardString(playerCards[1]));
+console.log();
+console.log();
+
 
