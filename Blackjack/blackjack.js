@@ -17,20 +17,39 @@ console.log("Welcome to Blackjack!!!");
 console.log("You are dealt: ");
 console.log(" " + card1);
 console.log(" " + card2);
+console.log();
+console.log();
 
-let suits = ["Hearts", "Spades", "Club", "Diamond"];
-let values = ["Ace", "King", "Queen", "Jack",
+// Creation of a deck of cards of many
+
+
+
+
+
+
+function createDeck(){
+    let suits = ["Hearts", "Spades", "Club", "Diamond"];
+    let values = ["Ace", "King", "Queen", "Jack",
              "Ten", "Nine","Eight", "Seven","Six",
              "Five","Four", "Three", "Two"];
-let deck = [];
-
-for (let i = 0; i < suits.length; i++){
-    for (let k = 0; k < values.length; k++){
-        deck.push(values[k] + " of " + suits[i]);
+    let deck = [];
+            
+    for (let i = 0; i < suits.length; i++){
+        for (let k = 0; k < values.length; k++){
+            deck.push(values[k] + " of " + suits[i]);
+        }
     }
+    return deck;
+    }
+
+let deck = createDeck();
+
+function getNextCard(){
+    return deck.shift();
 }
+            
 
 console.log(deck); 
  
-
+let playerCards = [getNextCard(), getNextCard()]; 
 
